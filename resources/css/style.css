@@ -112,4 +112,10 @@ header form div.form-group input.form-control::-ms-input-placeholder {
     margin-bottom: 0;
     margin-right: 0.5rem;
   }
+
+  header form.navbar-form.navbar-right {
+    border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
 }
