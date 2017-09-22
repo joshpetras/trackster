@@ -1,3 +1,115 @@
 /*
   Custom styles for Trackster App
 */
+
+
+/* general */
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1rem;
+  color: rgb(74, 74, 74);
+}
+
+
+/* header section */
+
+#header {
+  background-color: rgb(35, 2, 63);
+  padding: 2.75rem;
+}
+
+#logo {
+  font-family: 'Righteous', cursive;
+  font-size: 2.5rem;
+  color: rgb(255, 0, 171);
+}
+
+header button.btn-default {
+  background-color: rgb(255, 102, 204);
+  color: rgb(0, 0, 0);
+  border-radius: 19px;
+  border: none;
+}
+
+header button.btn-default:hover {
+  background-color: rgb(255, 0, 171);
+  color: rgb(0, 0, 0);
+}
+
+header button.btn-default:focus {
+  background-color: rgb(255, 102, 204);
+  color: rgb(0, 0, 0);
+  outline: none;
+}
+
+header button.btn-default:active {
+  background-color: rgb(255, 0, 171);
+  color: rgb(0, 0, 0);
+  outline: none;
+}
+
+header button.btn-default:focus:hover {
+  background-color: rgb(255, 0, 171);
+  color: rgb(0, 0, 0);
+  outline: none;
+}
+
+header form div.form-group input.form-control {
+  border-radius: 19px;
+  margin-right: 0.25rem;
+  color: rgb(74, 74, 74);
+}
+
+header form div.form-group input.form-control::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: rgb(191, 191, 191);
+}
+
+header form div.form-group input.form-control:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: rgb(191, 191, 191);
+  opacity: 1;
+}
+
+header form div.form-group input.form-control::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: rgb(191, 191, 191);
+  opacity: 1;
+}
+
+header form div.form-group input.form-control:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: rgb(191, 191, 191);
+}
+
+header form div.form-group input.form-control::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: rgb(191, 191, 191);
+}
+
+@media (max-width: 767px) {
+
+  #header {
+    padding: 1rem;
+  }
+
+  header div.navbar-header {
+    display: flex;
+    justify-content: center;
+  }
+
+  header form {
+    display: flex;
+    justify-content: center;
+  }
+
+  header form div.form-group {
+    margin-bottom: 0;
+    margin-right: 0.5rem;
+  }
+}

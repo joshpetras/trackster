@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>trackster</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="favicon.png" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,500,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
@@ -9,12 +11,28 @@
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="./resources/css/style.css">
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js"
-          integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-          crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header class="navbar navbar-default navbar-fixed-top">
+    <div id="header" class="container-fluid">
+      <div class="navbar-header">
+        <a id="logo" class="navbar-brand" href="#">trackster</a>
+      </div>
+      <form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">
+          <i class="fa fa-search fa-flip-horizontal fa-2x" aria-hidden="true"></i>
+        </button>
+      </form>
+    </div>
+  </header>
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
   <script type="text/javascript" src="./resources/js/trackster.js"></script>
   <script type="text/javascript" src="./resources/js/tests.js"></script>
-</head>
-<body>
 </body>
+
 </html>
