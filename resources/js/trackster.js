@@ -18,6 +18,7 @@ Trackster.renderTracks = function(tracks) {
   $("#track-list").empty();
   for (var i = 0; i < tracks.length; i++) {
     var mediumAlbumArt = tracks[i].image[1]["#text"];
+    var popularity = numeral(tracks[i].listeners).format('0a');
     var $newTrack =
       '<div id="track" class="row">' +
       '<div class="col-xs-1 col-xs-offset-1">' +
@@ -25,10 +26,10 @@ Trackster.renderTracks = function(tracks) {
       '<i class="fa fa-play-circle-o fa-2x" aria-hidden="true"></i>' +
       '</a>' +
       '</div>' +
-      '<div class="col-xs-3">' + tracks[i].name + '</div>' +
-      '<div class="col-xs-2 col-xs-offset-1">' + tracks[i].artist + '</div>' +
+      '<div class="col-xs-4">' + tracks[i].name + '</div>' +
+      '<div class="col-xs-2">' + tracks[i].artist + '</div>' +
       '<div class="col-xs-2"><img src="'+ mediumAlbumArt + '" alt="Album Art" /></div>' +
-      '<div class="col-xs-1 popularity">' + tracks[i].listeners + '</div>' +
+      '<div class="col-xs-1 popularity">' + popularity + '</div>' +
       '</div>';
     $("#track-list").append($newTrack);
   }
@@ -39,11 +40,13 @@ Trackster.renderTracks = function(tracks) {
   Render the tracks given in the API query response.
 */
 Trackster.searchTracksByTitle = function(title) {
+  $("#logo").addClass("animator");
   $.ajax({
     url: "https://ws.audioscrobbler.com/2.0/?method=track.search&track=" + title + "&api_key=" + API_KEY + "&format=json",
     success: function(response) {
       console.log(response);
       Trackster.renderTracks(response.results.trackmatches.track);
+      $("#logo").removeClass("animator");
     }
   });
 

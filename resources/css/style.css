@@ -39,6 +39,16 @@ a:hover {
   color: rgb(255, 0, 171);
 }
 
+.animator {
+  animation: flipper 1s linear infinite;
+}
+
+@keyframes flipper {
+  0% { transform: rotateX(0deg); color: rgb(255, 0, 171);}
+  50% { color: rgb(104, 0, 255);}
+  100% { transform: rotateX(360deg); color: rgb(255, 0, 171);}
+}
+
 header button.btn-default {
   background-color: rgb(255, 102, 204);
   color: rgb(0, 0, 0);
@@ -108,7 +118,14 @@ header form div.form-group input.form-control::-ms-input-placeholder {
   color: rgb(191, 191, 191);
 }
 
-#col-header {
+#col-header-desktop {
+  padding: 0.5rem 0;
+  color: rgb(255, 255, 255);
+  background-color: rgb(104, 0, 255);
+}
+
+#col-header-mobile {
+  display: none;
   padding: 0.5rem 0;
   color: rgb(255, 255, 255);
   background-color: rgb(104, 0, 255);
@@ -118,6 +135,14 @@ header form div.form-group input.form-control::-ms-input-placeholder {
 
   #header {
     padding: 1rem;
+  }
+
+  #col-header-desktop {
+    display: none;
+  }
+
+  #col-header-mobile {
+    display: block;
   }
 
   header div.navbar-header {
