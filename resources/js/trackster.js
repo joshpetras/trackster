@@ -15,7 +15,23 @@ const API_KEY = "e3a1287faa1d7076020e68630e873287";
   Append each "row" to the container in the body to display all tracks.
 */
 Trackster.renderTracks = function(tracks) {
-
+  $("#track-list").empty();
+  for (var i = 0; i < tracks.length; i++) {
+    var mediumAlbumArt = tracks[i].image[1]["#text"];
+    var $newTrack =
+      '<div id="track" class="row">' +
+      '<div class="col-xs-1 col-xs-offset-1">' +
+      '<a href="' + tracks[i].url + '" target="_blank">' +
+      '<i class="fa fa-play-circle-o fa-2x" aria-hidden="true"></i>' +
+      '</a>' +
+      '</div>' +
+      '<div class="col-xs-3">' + tracks[i].name + '</div>' +
+      '<div class="col-xs-2 col-xs-offset-1">' + tracks[i].artist + '</div>' +
+      '<div class="col-xs-2"><img src="'+ mediumAlbumArt + '" alt="Album Art" /></div>' +
+      '<div class="col-xs-1 popularity">' + tracks[i].listeners + '</div>' +
+      '</div>';
+    $("#track-list").append($newTrack);
+  }
 };
 
 /*
@@ -24,9 +40,10 @@ Trackster.renderTracks = function(tracks) {
 */
 Trackster.searchTracksByTitle = function(title) {
   $.ajax({
-    url: "http://ws.audioscrobbler.com/2.0/?method=track.search&track=" + title + "&api_key=" + API_KEY + "&format=json",
+    url: "https://ws.audioscrobbler.com/2.0/?method=track.search&track=" + title + "&api_key=" + API_KEY + "&format=json",
     success: function(response) {
       console.log(response);
+      Trackster.renderTracks(response.results.trackmatches.track);
     }
   });
 
