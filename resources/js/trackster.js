@@ -3,6 +3,7 @@ $(document).ready(function() {
   $("#search-btn").click(function() {
     Trackster.searchTracksByTitle($("#search-txt").val());
   });
+
 });
 
 $(document).on("click", ".artistLink", function(event) {
@@ -66,6 +67,7 @@ Trackster.renderArtists = function(tracks) {
   Given a search term as a string, query the LastFM API.
   Render the tracks given in the API query response.
 */
+
 Trackster.searchTracksByTitle = function(title) {
   $("#logo").addClass("animator");
   $.ajax({
