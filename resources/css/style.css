@@ -185,15 +185,20 @@ header form div.form-group input.form-control::-ms-input-placeholder {
   margin-right: -15px;
 }
 
-#track {
+.track {
   display: flex;
   align-items: center;
   padding: 0.25rem 0;
   border-bottom: 1px solid rgb(204, 204, 204);
 }
 
-#track:hover {
+.track:hover {
   background-color: rgb(239, 237, 242);
+}
+
+.artistLink:hover {
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .popularity {
@@ -202,6 +207,6 @@ header form div.form-group input.form-control::-ms-input-placeholder {
 
 @media (max-width: 767px) {
   #track-list {
-    margin-top: 203px;
+    margin-top: 195px;
   }
 }

@@ -5,7 +5,10 @@ $(document).ready(function() {
   });
 });
 
-
+$(document).on("click", ".artistLink", function(event) {
+  var artistSearch = ($(this).text());
+  Trackster.searchByArtist(artistSearch);
+});
 
 
 var Trackster = {};
@@ -19,17 +22,40 @@ Trackster.renderTracks = function(tracks) {
   $("#track-list").empty();
   for (var i = 0; i < tracks.length; i++) {
     var mediumAlbumArt = tracks[i].image[1]["#text"];
+    var xlAlbumArt = tracks[i].image[3]["#text"];
     var popularity = numeral(tracks[i].listeners).format('0a');
     var $newTrack =
-      '<div id="track" class="row">' +
+      '<div class="row track">' +
       '<div class="col-xs-1 col-xs-offset-1">' +
       '<a href="' + tracks[i].url + '" target="_blank">' +
       '<i class="fa fa-play-circle-o fa-2x" aria-hidden="true"></i>' +
       '</a>' +
       '</div>' +
       '<div class="col-xs-4 hideOverFlow">' + tracks[i].name + '</div>' +
-      '<div class="col-xs-2 hideOverFlow">' + tracks[i].artist + '</div>' +
-      '<div class="col-xs-2"><img src="'+ mediumAlbumArt + '" alt="Album Art" /></div>' +
+      '<div class="col-xs-2 hideOverFlow artistLink">' + tracks[i].artist + '</div>' +
+      '<div class="col-xs-2"><a href="' + xlAlbumArt + '" target="_blank"><img class="albumArt" src="' + mediumAlbumArt + '" alt="Album Art" /></a></div>' +
+      '<div class="col-xs-1 popularity">' + popularity + '</div>' +
+      '</div>';
+    $("#track-list").append($newTrack);
+  }
+};
+
+Trackster.renderArtists = function(tracks) {
+  $("#track-list").empty();
+  for (var i = 0; i < tracks.length; i++) {
+    var mediumAlbumArt = tracks[i].image[1]["#text"];
+    var xlAlbumArt = tracks[i].image[3]["#text"];
+    var popularity = numeral(tracks[i].listeners).format('0a');
+    var $newTrack =
+      '<div class="row track">' +
+      '<div class="col-xs-1 col-xs-offset-1">' +
+      '<a href="' + tracks[i].url + '" target="_blank">' +
+      '<i class="fa fa-play-circle-o fa-2x" aria-hidden="true"></i>' +
+      '</a>' +
+      '</div>' +
+      '<div class="col-xs-4 hideOverFlow"></div>' +
+      '<div class="col-xs-2 hideOverFlow artistLink">' + tracks[i].name + '</div>' +
+      '<div class="col-xs-2"><a href="' + xlAlbumArt + '" target="_blank"><img class="AlbumArt" src="' + mediumAlbumArt + '" alt="Album Art" /></a></div>' +
       '<div class="col-xs-1 popularity">' + popularity + '</div>' +
       '</div>';
     $("#track-list").append($newTrack);
@@ -50,5 +76,16 @@ Trackster.searchTracksByTitle = function(title) {
       $("#logo").removeClass("animator");
     }
   });
+};
 
+Trackster.searchByArtist = function(artist) {
+  $("#logo").addClass("animator");
+  $.ajax({
+    url: "https://ws.audioscrobbler.com/2.0/?method=artist.search&artist=" + artist + "&api_key=" + API_KEY + "&format=json",
+    success: function(response) {
+      console.log(response);
+      Trackster.renderArtists(response.results.artistmatches.artist);
+      $("#logo").removeClass("animator");
+    }
+  });
 };
