@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  $("#search-txt").select();
   $("#search-btn").click(function() {
     Trackster.searchTracksByTitle($("#search-txt").val());
   });
@@ -26,8 +27,8 @@ Trackster.renderTracks = function(tracks) {
       '<i class="fa fa-play-circle-o fa-2x" aria-hidden="true"></i>' +
       '</a>' +
       '</div>' +
-      '<div class="col-xs-4">' + tracks[i].name + '</div>' +
-      '<div class="col-xs-2">' + tracks[i].artist + '</div>' +
+      '<div class="col-xs-4 hideOverFlow">' + tracks[i].name + '</div>' +
+      '<div class="col-xs-2 hideOverFlow">' + tracks[i].artist + '</div>' +
       '<div class="col-xs-2"><img src="'+ mediumAlbumArt + '" alt="Album Art" /></div>' +
       '<div class="col-xs-1 popularity">' + popularity + '</div>' +
       '</div>';

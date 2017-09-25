@@ -25,6 +25,11 @@ a:hover {
   color: rgb(255, 0, 171);
 }
 
+@media (max-width: 767px) {
+  html {
+    font-size: 14px;
+  }
+}
 
 /* header section */
 
@@ -168,6 +173,11 @@ header form div.form-group input.form-control::-ms-input-placeholder {
 }
 
 /* track list section */
+
+.hideOverFlow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 #track-list {
   margin-top: 184px;
