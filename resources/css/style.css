@@ -32,6 +32,7 @@ body {
 header button.btn-default {
   background-color: rgb(255, 102, 204);
   color: rgb(0, 0, 0);
+  width: 4.5rem;
   border-radius: 19px;
   border: none;
 }
@@ -62,7 +63,12 @@ header button.btn-default:focus:hover {
 header form div.form-group input.form-control {
   border-radius: 19px;
   margin-right: 0.25rem;
+  width: 15rem;
   color: rgb(74, 74, 74);
+}
+
+#search-txt {
+  height: 41px;
 }
 
 header form div.form-group input.form-control::-webkit-input-placeholder {
@@ -90,6 +96,12 @@ header form div.form-group input.form-control:-ms-input-placeholder {
 header form div.form-group input.form-control::-ms-input-placeholder {
   /* Microsoft Edge */
   color: rgb(191, 191, 191);
+}
+
+#col-header {
+  padding: 0.5rem 0;
+  color: rgb(255, 255, 255);
+  background-color: rgb(104, 0, 255);
 }
 
 @media (max-width: 767px) {
