@@ -1,6 +1,7 @@
 $(document).ready(function() {
   $("#search-txt").select();
   $("#search-btn").click(function() {
+    event.preventDefault();
     Trackster.searchTracksByTitle($("#search-txt").val());
   });
 
