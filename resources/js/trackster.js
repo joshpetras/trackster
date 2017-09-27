@@ -77,6 +77,7 @@ Trackster.searchTracksByTitle = function(title) {
       console.log(response);
       Trackster.renderTracks(response.results.trackmatches.track);
       $("#logo").removeClass("animator");
+      $("#search-txt").select();
     }
   });
 };
@@ -89,6 +90,7 @@ Trackster.searchByArtist = function(artist) {
       console.log(response);
       Trackster.renderArtists(response.results.artistmatches.artist);
       $("#logo").removeClass("animator");
+      $("#search-txt").select();
     }
   });
 };
