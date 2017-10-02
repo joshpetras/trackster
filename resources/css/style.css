@@ -136,6 +136,11 @@ header form div.form-group input.form-control::-ms-input-placeholder {
   background-color: rgb(104, 0, 255);
 }
 
+.sortable:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 @media (max-width: 767px) {
 
   #header {
