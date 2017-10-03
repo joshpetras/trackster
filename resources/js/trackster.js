@@ -84,7 +84,7 @@ Trackster.renderTracks = function(tracks) {
       '</div>' +
       '<div class="col-xs-3 hideOverFlow">' + tracks[i].name + '</div>' +
       '<div class="col-xs-2 hideOverFlow artistLink">' + tracks[i].artist + '</div>' +
-      '<div class="col-xs-2"><a href="' + xlAlbumArt + '" target="_blank"><img class="albumArt" src="' + mediumAlbumArt + '" alt="Album Art" /></a></div>' +
+      '<div class="col-xs-2"><a href="#" data-featherlight="' + xlAlbumArt + '" target="_blank"><img class="albumArt" src="' + mediumAlbumArt + '" alt="Album Art" /></a></div>' +
       '<div class="col-xs-2">' + popularity + '</div>' +
       '</div>';
     $("#track-list").append($newTrack);
@@ -106,7 +106,7 @@ Trackster.renderArtists = function(tracks) {
       '</div>' +
       '<div class="col-xs-3 hideOverFlow"></div>' +
       '<div class="col-xs-2 hideOverFlow artistLink">' + tracks[i].name + '</div>' +
-      '<div class="col-xs-2"><a href="' + xlAlbumArt + '" target="_blank"><img class="AlbumArt" src="' + mediumAlbumArt + '" alt="Album Art" /></a></div>' +
+      '<div class="col-xs-2"><a href="#" data-featherlight="' + xlAlbumArt + '" target="_blank"><img class="AlbumArt" src="' + mediumAlbumArt + '" alt="Album Art" /></a></div>' +
       '<div class="col-xs-2">' + popularity + '</div>' +
       '</div>';
     $("#track-list").append($newTrack);
