@@ -11,11 +11,11 @@ const API_KEY = "e3a1287faa1d7076020e68630e873287";
 
 $(document).ready(function() {
   $("#search-txt").select();
-  $("#search-btn").click(function() {
+  $("#search-btn").click(function(event) {
     event.preventDefault();
     Trackster.searchTracksByTitle($("#search-txt").val());
   });
-  $(".sortable").click(function() {
+  $(".sortable").click(function(event) {
     switch (searchKey) {
       case "none":
         break;
